@@ -7,12 +7,21 @@ import "../assets/vendor/css/theme-default.css";
 import "../assets/css/demo.css";
 import "../assets/vendor/libs/perfect-scrollbar/perfect-scrollbar.css";
 import "../assets/vendor/libs/apex-charts/apex-charts.css";
+import "select2/dist/css/select2.min.css";
+import "select2/dist/js/select2.min.js";
 // import "../assets/vendor/libs/perfect-scrollbar/perfect-scrollbar";
 // import "../assets/vendor/js/bootstrap.js";
 
 import Navbar from "./components/Navbar";
 import Sidebar from "./components/Sidebar";
 import AdminDashboard from "./pages/dashboard/AdminDashboard.js";
+import Parents from "./pages/parents/Parents.js";
+import CourseList from "./pages/course/CourseList.js";
+import AddCourse from "./pages/course/AddCourse.js";
+import Payment from "./pages/payment/PaymentForm.js";
+import Invoice from "./pages/payment/Invoice.js";
+import Student from "./pages/student/StudentForm.js";
+import Welcome from "./pages/welcome/WelcomePage.js";
 
 function AdminApp() {
   useEffect(() => {
@@ -97,7 +106,13 @@ function AdminApp() {
           <div className="content-wrapper">
             <Routes>
               <Route path="dashboard" element={<AdminDashboard />} />
-              {/* <Route path="another-page" element={<AnotherPage />} /> */}
+              <Route path="parents" element={<Parents />} />
+              <Route path="list" element={<CourseList />} />
+              <Route path="addc" element={<AddCourse />} />
+              <Route path="payment" element={<Payment />} />
+              <Route path="invoice" element={<Invoice />} />
+              <Route path="student" element={<Student />} />
+              <Route path="welcome" element={<Welcome />} />
             </Routes>
             <div className="content-backdrop fade"></div>
           </div>

@@ -1,7 +1,5 @@
 import React, { createContext, useState, useContext, useEffect } from "react";
-import axios from "axios";
-
-const APP_URL = "http://localhost:8000/api/";
+import axiosInstance from "../api/axiosInstance";
 
 export const AuthContext = createContext();
 
@@ -13,15 +11,6 @@ export const AuthProvider = ({ children }) => {
   const [user, setUser] = useState(null);
   const [token, setToken] = useState(localStorage.getItem("token"));
 
-  // Mengambil CSRF token dari meta tag dan mengatur header Axios
-  const csrfToken = document.head.querySelector(
-    'meta[name="csrf-token"]'
-  )?.content;
-  if (csrfToken) {
-    axios.defaults.headers.common["X-CSRF-TOKEN"] = csrfToken;
-  }
-
-  // Menyimpan token di localStorage setiap kali token berubah
   useEffect(() => {
     if (token) {
       localStorage.setItem("token", token);
@@ -32,10 +21,9 @@ export const AuthProvider = ({ children }) => {
 
   const login = async (email, password) => {
     try {
-      const response = await axios.post(`${APP_URL}login`, { email, password });
-
+      const response = await axiosInstance.post("/login", { email, password });
       setUser(response.data.user);
-      setToken(response.data.token); // Perubahan token akan disimpan oleh useEffect
+      setToken(response.data.token);
       return true;
     } catch (error) {
       console.error(
@@ -48,7 +36,7 @@ export const AuthProvider = ({ children }) => {
 
   const logout = () => {
     setUser(null);
-    setToken(null); // Menghapus token akan menghapusnya dari localStorage melalui useEffect
+    setToken(null);
   };
 
   return (
