@@ -22,6 +22,7 @@ function StudentForm() {
       students.map((student) => ({
         id: student.id,
         isOpen: false,
+        dirawat: Boolean(student.dirawat) || false,
         isDirawat: Boolean(student.dirawat) || false,
         id_branch: student.id_branch || "",
         id_kelas: student.id_kelas || "",
@@ -295,7 +296,7 @@ function StudentForm() {
                   </div>
                   <div className="mb-3">
                     <label
-                      htmlFor={`Dirawat-${form.id}`}
+                      htmlFor={`dirawat-${form.id}`}
                       className="form-label"
                     >
                       Under Care?
@@ -305,8 +306,9 @@ function StudentForm() {
                         type="radio"
                         className="form-check-input"
                         id={`dirawat-yes-${form.id}`}
+                        name={`dirawat-${form.id}`}
                         onChange={() => handleDirawatChange(form.id, true)}
-                        checked={form.isDirawat}
+                        checked={form.dirawat === 1}
                       />
                       <label
                         className="form-check-label"
@@ -320,8 +322,9 @@ function StudentForm() {
                         type="radio"
                         className="form-check-input"
                         id={`dirawat-no-${form.id}`}
+                        name={`dirawat-${form.id}`}
                         onChange={() => handleDirawatChange(form.id, false)}
-                        checked={!form.isDirawat}
+                        checked={form.dirawat === 0}
                       />
                       <label
                         className="form-check-label"
@@ -331,7 +334,8 @@ function StudentForm() {
                       </label>
                     </div>
                   </div>
-                  {form.isDirawat && (
+
+                  {form.dirawat && (
                     <>
                       <div className="mb-3">
                         <label
@@ -445,6 +449,7 @@ function StudentForm() {
                       </div>
                     </>
                   )}
+
                   <button type="submit" className="btn btn-primary">
                     Submit
                   </button>
