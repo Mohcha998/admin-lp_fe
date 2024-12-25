@@ -13,7 +13,6 @@ import "select2/dist/js/select2.min.js";
 // import "../assets/vendor/js/bootstrap.js";
 
 import Navbar from "./components/Navbar";
-import Sidebar from "./components/Sidebar";
 import AdminDashboard from "./pages/dashboard/AdminDashboard.js";
 import Parents from "./pages/parents/Parents.js";
 import CourseList from "./pages/course/CourseList.js";
@@ -98,10 +97,9 @@ function AdminApp() {
   }, []);
 
   return (
-    <div className="layout-wrapper layout-content-navbar">
-      <div className="layout-container">
-        <Sidebar />
-        <div className="layout-page">
+    <div className="layout-wrapper layout-content-navbar d-flex justify-content-center align-items-center">
+      <div className="layout-container d-flex flex-column align-items-center">
+        {/* <Sidebar /> */}
           <Navbar />
           <div className="content-wrapper">
             <Routes>
@@ -116,7 +114,6 @@ function AdminApp() {
             </Routes>
             <div className="content-backdrop fade"></div>
           </div>
-        </div>
       </div>
     </div>
   );
