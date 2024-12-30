@@ -109,11 +109,11 @@ const Parents = () => {
   };
 
   const navItems = [
-    { path: "/admin/welcome", icon: "bx-home-circle", label: "Welcome" },
-    { path: "/admin/parents", icon: "bx-user", label: "Parents" },
-    { path: "/admin/student", icon: "bx-bell", label: "Student" },
-    { path: "/admin/payment", icon: "bx-link-alt", label: "Payment" },
-    { path: "/admin/dashboard", icon: "bx-cog", label: "Settings" },
+    { path: "/welcome", icon: "bx-home-circle", label: "Welcome" },
+    { path: "/parents", icon: "bx-user", label: "Parents" },
+    { path: "/student", icon: "bx-bell", label: "Student" },
+    // { path: "/payment", icon: "bx-link-alt", label: "Payment" },
+    { path: "/dashboard", icon: "bx-cog", label: "Settings" },
   ];
 
   return (

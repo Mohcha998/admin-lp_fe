@@ -48,11 +48,11 @@ const WelcomePage = () => {
   }
 
   const navItems = [
-    { path: "/admin/welcome", icon: "bx-home-circle", label: "Welcome" },
-    { path: "/admin/parents", icon: "bx-user", label: "Parents" },
-    { path: "/admin/student", icon: "bx-bell", label: "Student" },
-    { path: "/admin/payment", icon: "bx-link-alt", label: "Payment" },
-    { path: "/admin/dashboard", icon: "bx-cog", label: "Settings" },
+    { path: "/welcome", icon: "bx-home-circle", label: "Welcome" },
+    { path: "/parents", icon: "bx-user", label: "Parents" },
+    { path: "/student", icon: "bx-bell", label: "Student" },
+    // { path: "/payment", icon: "bx-link-alt", label: "Payment" },
+    { path: "/dashboard", icon: "bx-cog", label: "Settings" },
   ];
 
   return (
@@ -76,7 +76,7 @@ const WelcomePage = () => {
           <div className="card shadow-lg mt-5">
             <div className="card-body">
               <h1 className="card-title mb-4">
-                Selamat Datang, {user?.name || "Pengguna"}!
+                Selamat Datang, <span className="fw-bold">{user?.name || "Pengguna"}!</span>
               </h1>
               <p className="card-text">
                 Kami senang Anda bergabung dengan kami. Semoga Anda menikmati
