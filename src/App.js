@@ -25,11 +25,11 @@ function App() {
       <Routes>
         <Route
           path="/login"
-          element={token ? <Navigate to="/admin/dashboard" /> : <LoginAdmin />}
+          element={token ? <Navigate to="/dashboard" /> : <LoginAdmin />}
         />
 
         <Route
-          path="/admin/*"
+          path="/*"
           element={
             <ProtectedRoute>
               <BranchProvider>

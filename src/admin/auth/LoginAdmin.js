@@ -67,7 +67,7 @@ function LoginAdmin() {
       const success = await login(email, password);
       if (success) {
         // If login is successful, navigate to the admin dashboard
-        navigate("/admin");
+        navigate("/");
       } else {
         setError("Login failed. Please check your username and password.");
       }

@@ -46,7 +46,7 @@ const Invoice = () => {
   }, [location]);
 
   const handleGoBack = () => {
-    navigate("/admin/dashboard");
+    navigate("/dashboard");
   };
 
   if (loading) {

@@ -55,11 +55,11 @@ const AdminDashboard = () => {
   };
 
   const navItems = [
-    { path: "/admin/welcome", icon: "bx-home-circle", label: "Welcome" },
-    { path: "/admin/parents", icon: "bx-user", label: "Parents" },
-    { path: "/admin/student", icon: "bx-bell", label: "Student" },
-    { path: "/admin/payment", icon: "bx-link-alt", label: "Payment" },
-    { path: "/admin/dashboard", icon: "bx-cog", label: "Settings" },
+    { path: "/welcome", icon: "bx-home-circle", label: "Welcome" },
+    { path: "/parents", icon: "bx-user", label: "Parents" },
+    { path: "/student", icon: "bx-bell", label: "Student" },
+    // { path: "/payment", icon: "bx-link-alt", label: "Payment" },
+    { path: "/dashboard", icon: "bx-cog", label: "Settings" },
   ];
 
   return (
@@ -82,12 +82,9 @@ const AdminDashboard = () => {
         </ul>
 
         {/* Content */}
-        <h4 className="fw-bold py-3 mb-4">
-          <span className="text-muted fw-light">Account Settings /</span>{" "}
-          {location.pathname.split("/").pop().toUpperCase()}
-        </h4>
+        <h4 className="fw-bold py-3 mb-4">Account Setting</h4>
 
-        {location.pathname === "/admin/dashboard" && (
+        {location.pathname === "/dashboard" && (
           <div className="row">
             <div className="col-md-12">
               <div className="card mb-4">

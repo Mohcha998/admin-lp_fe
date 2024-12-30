@@ -70,11 +70,11 @@ function StudentForm() {
   };
 
   const navItems = [
-    { path: "/admin/welcome", icon: "bx-home-circle", label: "Welcome" },
-    { path: "/admin/parents", icon: "bx-user", label: "Parents" },
-    { path: "/admin/student", icon: "bx-bell", label: "Student" },
-    { path: "/admin/payment", icon: "bx-link-alt", label: "Payment" },
-    { path: "/admin/dashboard", icon: "bx-cog", label: "Settings" },
+    { path: "/welcome", icon: "bx-home-circle", label: "Welcome" },
+    { path: "/parents", icon: "bx-user", label: "Parents" },
+    { path: "/student", icon: "bx-bell", label: "Student" },
+    // { path: "/payment", icon: "bx-link-alt", label: "Payment" },
+    { path: "/dashboard", icon: "bx-cog", label: "Settings" },
   ];
 
   const handleDirawatChange = (id, value) => {
@@ -102,7 +102,7 @@ function StudentForm() {
         ))}
       </ul>
 
-      <h2>Student Form</h2>
+      <h4 className="fw-bold py-3 mb-4">Student Form</h4>
       <div id="student-forms">
         {forms.map((form) => (
           <div className="card mb-3" key={form.id}>
@@ -119,7 +119,7 @@ function StudentForm() {
                 <form onSubmit={(e) => handleSubmit(e, form.id)}>
                   <div className="mb-3">
                     <label htmlFor={`name-${form.id}`} className="form-label">
-                      Name
+                      Nama
                     </label>
                     <input
                       type="text"
@@ -263,7 +263,7 @@ function StudentForm() {
                       htmlFor={`perubahan-${form.id}`}
                       className="form-label"
                     >
-                      What Changes Would You Like to See?
+                      Apa perubahan yang ingin Anda lihat pada anak Anda?
                     </label>
                     <input
                       type="text"
@@ -281,7 +281,7 @@ function StudentForm() {
                       htmlFor={`kelebihan-${form.id}`}
                       className="form-label"
                     >
-                      What Are Your Child's Strengths?
+                      Apa kelebihan anak Anda?
                     </label>
                     <input
                       type="text"
@@ -299,8 +299,9 @@ function StudentForm() {
                       htmlFor={`dirawat-${form.id}`}
                       className="form-label"
                     >
-                      Under Care?
+                      Apakah saat ini anak Anda berada dibawah perawatan Dokter?
                     </label>
+                    <br/>
                     <div className="form-check form-check-inline">
                       <input
                         type="radio"
@@ -342,7 +343,7 @@ function StudentForm() {
                           htmlFor={`kondisi-${form.id}`}
                           className="form-label"
                         >
-                          Condition
+                          Apa kondisinya?
                         </label>
                         <input
                           type="text"
@@ -364,7 +365,7 @@ function StudentForm() {
                           htmlFor={`tindakan-${form.id}`}
                           className="form-label"
                         >
-                          Actions
+                          Tindakan Apa yang dilakukan jika terjadi sesuatu tentang penyakitnya?
                         </label>
                         <input
                           type="text"
@@ -386,7 +387,7 @@ function StudentForm() {
                           htmlFor={`emergency_contact-${form.id}`}
                           className="form-label"
                         >
-                          Emergency Contact
+                          Dalam keadaan darurat, orang yang dapat dihubungi
                         </label>
                         <input
                           type="text"
@@ -408,7 +409,7 @@ function StudentForm() {
                           htmlFor={`hubungan_eme-${form.id}`}
                           className="form-label"
                         >
-                          Emergency Relationship
+                          Hubungan dengan Student
                         </label>
                         <input
                           type="text"
@@ -430,7 +431,7 @@ function StudentForm() {
                           htmlFor={`emergency_call-${form.id}`}
                           className="form-label"
                         >
-                          Emergency Contact Number
+                          No. HP
                         </label>
                         <input
                           type="text"

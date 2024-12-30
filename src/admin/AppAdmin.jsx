@@ -17,7 +17,6 @@ import AdminDashboard from "./pages/dashboard/AdminDashboard.js";
 import Parents from "./pages/parents/Parents.js";
 import CourseList from "./pages/course/CourseList.js";
 import AddCourse from "./pages/course/AddCourse.js";
-import Payment from "./pages/payment/PaymentForm.js";
 import Invoice from "./pages/payment/Invoice.js";
 import Student from "./pages/student/StudentForm.js";
 import Welcome from "./pages/welcome/WelcomePage.js";
@@ -107,7 +106,6 @@ function AdminApp() {
               <Route path="parents" element={<Parents />} />
               <Route path="list" element={<CourseList />} />
               <Route path="addc" element={<AddCourse />} />
-              <Route path="payment" element={<Payment />} />
               <Route path="invoice" element={<Invoice />} />
               <Route path="student" element={<Student />} />
               <Route path="welcome" element={<Welcome />} />
